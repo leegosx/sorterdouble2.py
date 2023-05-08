@@ -72,7 +72,12 @@ def sort_files(path):
                 pass
                 
 # sort_files(Path(sys.argv[1]))
-sort_files(Path(sys.argv[1]) if len(sys.argv) > 1 else Path('.'))
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        path = Path(sys.argv[1])
+    else:
+        path = Path('.')
+    sort_files(path)
 
 # sort_files(Path(path))
 
